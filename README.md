@@ -15,9 +15,7 @@ $list_projects = array();
 $handle = opendir(".");
 
 while (false !== ($file = readdir($handle))) {
-
 	if (is_dir($file) && !in_array($file, $projectsListIgnore))
-	
 		$list_projects[] = $file;
 		
 }
@@ -27,13 +25,9 @@ closedir($handle);
 $projectContents = '';
 
 if (count($list_projects) > 0) {
-
 	if ($wampConf['LinksOnProjectsHomePage'] == 'on') {
-	
 		$projectContents .= "<p class='projectsdir'>http://localhost/project/</p>\n";
-		
 	}
-	
 	foreach ($list_projects as $file) {
 	
-		$projectContents .= ($wampConf['LinksOnProjectsHomePage'] == 'off') ? "     <---  alterado de on para off 
+		$projectContents .= ($wampConf['LinksOnProjectsHomePage'] == 'off') ? "     //<---  alterado de on para off 
